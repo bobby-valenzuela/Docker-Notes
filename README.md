@@ -6,4 +6,4 @@ A “docker-compose.yaml” file, is a configuration file that allows us to mana
  
 <br>
 
-![image](https://github.com/bobby-valenzuela/Docker-Notes/assets/70870649/047c2440-a086-4bcb-b10a-544ba41eeee9)
+![image](https://github.com/bobby-valenzuela/Docker-Notes/assets/70870649/be113bdc-6701-472e-b2fe-fa7fba852a6b)
