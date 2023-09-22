@@ -10,3 +10,5 @@ __Branches__
   - Contains sample source code and a template of a Dockerfile.
   - Uses a volume to map a local folder to the root folder inside a Docker container.
   - Uses nodemon to detect local changes apply then to container.
+- __Compose__
+  - Use Docker compose to spin up multiple containers from a single docker compose config file. 
