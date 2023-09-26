@@ -33,6 +33,7 @@ In the parent path of your docker projects (i.e., the path within which directly
 ```sh
 docker-compose up
 ```
+Note: You can also explicitly specify your config file using the "-f" option.
 
 <br>
 
