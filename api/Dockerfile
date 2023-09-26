@@ -7,8 +7,9 @@ WORKDIR /app
 # Copy dependency list to we can install those right away or skip if nothing changes
 COPY package*.json .
 
-# Load npm dependencies (command execute in /app dir)
+# Load npm dependencies (command execute in /app dir) 
 RUN npm install
+# *! The RUN command is executed within the Docker container whereas EXEC is executed in host system
 
 # Copy source files <path_where_dockerflie_lives> into docker working path => host './api/*'  copied to 'container./app'
 COPY . .
