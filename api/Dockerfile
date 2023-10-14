@@ -17,6 +17,10 @@ COPY . .
 # Specify which port this container should listen on (if any)
 # Note: required for docker desktop port mapping 
 EXPOSE 4000
+# To clarify, that EXPOSE <PORT> in the Dockerfile in the end is optional. 
+# It documents that a process in the container will expose this port. But you still need to then actually expose the port with -p when running docker run. 
+# So technically, -p is the only required part when it comes to listening on a port. Still, it is a best practice to also add EXPOSE in the Dockerfile to document this behavior.
+
 
 CMD ["node", "app.js"]
 
