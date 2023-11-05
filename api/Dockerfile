@@ -37,8 +37,24 @@ CMD ["npm", "run", "dev"]
 
 
 # - Option 2 (with volume)
-    # Format:
+    # Format: bind mount
         # sudo docker run --name mynodeapp_c1-p 4000:4000 --rm -v <local_dir>:<container_dir> -v /app/node_modules mynodeapi_img:1.0
 
     # Example:
         # sudo docker run --name mynodeapp_c1-p 4000:4000 --rm -v C:\Users\Me\Documents\mydockerapp\:/dockerapp -v /app/node_modules mynodeapi_img:1.0
+
+
+
+# - Option 3 (read-only bind mount/host volume and one exception)
+    # Format:
+        # sudo docker run --name mynodeapp_c1-p 4000:4000 --rm -v <local_dir>:<container_dir>:ro -v /app/node_modules -v <container_dir>/public_files mynodeapi_img:1.0
+
+    # Example:
+        # sudo docker run --name mynodeapp_c1-p 4000:4000 --rm -v C:\Users\Me\Documents\mydockerapp\:/dockerapp:ro -v /app/node_modules -v /mydockerapp/public_files mynodeapi_img:1.0
+
+        # In this example, the files on the host system are read-only and will be copied other to the container (as the container is still writable).
+        # However, there's one exception to this/: /mydockerapp/public_files
+        # /meydockerapp/public_files can still overwrite public_files on the host system, because 
+            # the -v /mydockerapp/public_files does not have the read-only flag (ro) 
+            #  and because /mydockerapp/public_files is more specifciic than /mydockerapp/ in f
+        
